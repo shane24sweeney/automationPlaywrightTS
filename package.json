@@ -1,0 +1,26 @@
+{
+  "name": "playwright-typescript-sample",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "report": "playwright show-report",
+    "test:cucumber": "cucumber-js --config cucumber.config.cjs",
+    "test:all": "npm test && npm run test:cucumber",
+    "test:mobile": "playwright test --project=mobile-chrome --project=mobile-safari",
+    "test:browserstack": "BROWSERSTACK=true playwright test",
+    "test:cucumber:mobile": "DEVICE=\"${DEVICE:-Pixel 7}\" cucumber-js --config cucumber.config.cjs",
+    "test:cucumber:browserstack": "BROWSERSTACK=true cucumber-js --config cucumber.config.cjs",
+    "test:api": "rm -rf api-tests/results && tools/apache-jmeter-5.6.3/bin/jmeter -n -t api-tests/portal-api.jmx -l api-tests/results/results.jtl -j api-tests/results/jmeter.log -e -o api-tests/results/report",
+    "jmeter": "tools/apache-jmeter-5.6.3/bin/jmeter -t api-tests/portal-api.jmx"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^10.9.0",
+    "@playwright/test": "latest",
+    "@types/node": "latest",
+    "tsx": "^4.23.13",
+    "typescript": "latest"
+  }
+}
