@@ -1,4 +1,4 @@
-# Playwright TypeScript Sample
+# automationPlaywrightTS
 
 End-to-end tests for the INEIGHT API developer portal using Playwright and TypeScript, with Cucumber scenarios in `tests/features`.
 
